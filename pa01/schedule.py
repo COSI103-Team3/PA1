@@ -44,15 +44,15 @@ class Schedule():
         return Schedule([course for course in self.courses if course['subject'] in subjects])
 
     def title(self,title):
-        ''' subject filters the courses by subject '''
+        ''' subject filters the courses by title '''
         return Schedule([course for course in self.courses if course['title'] in title])
 
     def description(self,desc):
-        ''' subject filters the courses by subject '''
+        ''' subject filters the courses by description '''
         return Schedule([course for course in self.courses if course['description'] in desc])
 
     def coursenumber(self,cnum):
-        ''' subject filters the courses by subject '''
+        ''' subject filters the courses by course number '''
         return Schedule([course for course in self.courses if course['coursenum'] in cnum])
 
     def sort(self,field):
