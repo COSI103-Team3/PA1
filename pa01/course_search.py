@@ -4,7 +4,6 @@ students search for courses they might want to take at Brandeis
 '''
 
 from schedule import Schedule
-import sys
 
 schedule = Schedule()
 schedule.load_courses()
