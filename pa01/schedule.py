@@ -61,7 +61,6 @@ class Schedule():
             return Schedule(sorted(self.courses, key= lambda course: course['coursenum']))
         if field=='subject':
             return Schedule(sorted(self.courses, key= lambda course: course['subject']))
-        else:
-            print("can't sort by "+str(field)+" yet")
-            return self
+        print("can't sort by "+str(field)+" yet")
+        return self
  
