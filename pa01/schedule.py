@@ -43,15 +43,15 @@ class Schedule():
     def subject(self,subjects):
         ''' subject filters the courses by subject '''
         return Schedule([course for course in self.courses if course['subject'] in subjects])
-
+    #ben
     def title(self,title):
         ''' subject filters the courses by title '''
         return Schedule([course for course in self.courses if course['title'] in title])
-
+    #ben
     def description(self,desc):
         ''' subject filters the courses by description '''
         return Schedule([course for course in self.courses if course['details'] in desc])
-
+    #ben
     def coursenumber(self,cnum):
         ''' subject filters the courses by course number '''
         return Schedule([course for course in self.courses if course['coursenum'] in cnum])
@@ -61,7 +61,6 @@ class Schedule():
             return Schedule(sorted(self.courses, key= lambda course: course['coursenum']))
         if field=='subject':
             return Schedule(sorted(self.courses, key= lambda course: course['subject']))
-        else:
-            print("can't sort by "+str(field)+" yet")
-            return self
+        print("can't sort by "+str(field)+" yet")
+        return self
  

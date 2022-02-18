@@ -56,7 +56,7 @@ def topmenu():
             course = input("enter a course:")
             schedule = schedule.coursenumber([course])
 
-        # Instructors
+        # Instructors - Ben
         elif command in ['i','instructor']:
             instructor = input("enter a instructor:")
             schedule = schedule.lastname([instructor])
