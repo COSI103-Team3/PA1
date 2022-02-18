@@ -73,6 +73,26 @@ def topmenu():
         elif command in ['es', 'email sorted']:
             email = input("enter a email to be sorted by subject: ")
             schedule = schedule.email([email]).sort('subject')
+        elif command in ['ti','title']:
+            title = input("enter a title:")
+            schedule = schedule.title([title])
+        elif command in ['d','description']:
+            description = input("enter a description:")
+            schedule = schedule.description([description])
+            #Ben
+        elif command in ['ln','last name']:
+            last_name = input("enter a last name:")
+            schedule = schedule.lastname([last_name])
+            #2 - Shai
+        elif command in ['e','email']:
+            email = input("enter an email:")
+            schedule = schedule.email([email])
+
+            #3-Ava
+        elif command in ['en','enrolled']:
+            enrolled = input("enter enrolled:")
+            schedule = schedule.enrolled([enrolled])
+
         # End of Problem 7
 
         else:
