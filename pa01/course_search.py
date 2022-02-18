@@ -65,6 +65,7 @@ def topmenu():
             schedule = schedule.lastname([instructor])
 
         # email sorted by subject
+            # Eric
         elif command in ['es', 'email sorted']:
             email = input("enter a email to be sorted by subject: ")
             schedule = schedule.email([email]).sort('subject')
