@@ -3,6 +3,8 @@ course_search is a Python script using a terminal based menu to help
 students search for courses they might want to take at Brandeis
 '''
 
+from audioop import reverse
+import email
 from schedule import Schedule
 import sys
 
@@ -23,6 +25,10 @@ timeofday (filter by day and time, e.g. meets at 11 on Wed)
 '''
 
 terms = {c['term'] for c in schedule.courses}
+course = {c["coursenum"] for c in schedule.courses}
+instructor = {c["instructor"] for c in schedule.courses}
+subject = {c["subject"] for c in schedule.courses}
+description = {c['description'] for c in schedule.courses}
 
 def topmenu():
     '''
@@ -47,10 +53,32 @@ def topmenu():
         elif command in ['s','subject']:
             subject = input("enter a subject:")
             schedule = schedule.subject([subject])
+        # Beginning of Problem 7
+        # Courses
+        elif command in ['c','courses']:
+            course = input("enter a course:")
+            schedule = schedule.coursenumber([course])
+
+        # Instructors
+        elif command in ['i','instructor']:
+            instructor = input("enter a instructor:")
+            schedule = schedule.lastname([instructor])
+
+        # Instructor sorted by subject
+        elif command in ['is','instructor sorted']:
+            instructor = input("enter a instructor to be sorted by subject:")
+            schedule = schedule.lastname([instructor]).sort('subject')
+
+        # email sorted by subject
+        elif command in ['es', 'email sorted']:
+            email = input("enter a email to be sorted by subject: ")
+            schedule = schedule.email([email]).sort('subject')
+        # End of Problem 7
+
         else:
             print('command',command,'is not supported')
             continue
-
+        
         print("courses has",len(schedule.courses),'elements',end="\n\n")
         print('here are the first 10')
         for course in schedule.courses[:10]:
