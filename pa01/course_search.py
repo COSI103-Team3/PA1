@@ -88,6 +88,11 @@ def topmenu():
             enrolled = input("enter enrolled:")
             schedule = schedule.enrolled([enrolled])
 
+        # 4-Zach Instructor sorted by subject
+        elif command in ['is','instructor sorted']:
+            instructor = input("enter a instructor to be sorted by subject:")
+            schedule = schedule.lastname([instructor]).sort('subject')
+
         # End of Problem 7
 
         else:
