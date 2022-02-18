@@ -69,7 +69,7 @@ def topmenu():
             instructor = input("enter a instructor to be sorted by subject:")
             schedule = schedule.lastname([instructor]).sort('subject')
 
-        # sorted_subject by instructor
+        # email sorted by subject
         elif command in ['es', 'email sorted']:
             email = input("enter a email to be sorted by subject: ")
             schedule = schedule.email([email]).sort('subject')
