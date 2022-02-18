@@ -57,6 +57,8 @@ class Schedule():
         return Schedule([course for course in self.courses if course['coursenum'] in cnum])
 
     def sort(self,field):
+        if field=='coursenum':
+            return Schedule(sorted(self.courses, key= lambda course: course['coursenum']))
         if field=='subject':
             return Schedule(sorted(self.courses, key= lambda course: course['subject']))
         else:
